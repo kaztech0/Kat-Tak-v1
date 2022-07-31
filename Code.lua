@@ -4,6 +4,10 @@ local Window = Library.CreateLib("Kat Tak v1", "Ocean")
 local Main = Window:NewTab("Scripts")
 local MainSection = Main:NewSection("Fe Scripts")
 
+MainSection:NewButton("Universal Hub", "useful hub", function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
+end)
+
 MainSection:NewButton("Fe Flip", "Hardcore Parkour", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/xi23b40Y'))()
 end)
@@ -31,13 +35,4 @@ PlayerSection:NewButton("Reset Stats", "its in the name dumbass", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
 
-end
-
-PlayerSection:NewButton("Respawn", "its in the name dumbass", function()
-    game.Players.LocalPlayer.Character.Head:Destroy()
-if game.Players.LocalPlayer.Character.Humanoid.Health < 5 then 
-    local deathmanok = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
-    wait(1.5)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(deathmanok)
-end
 end)
